@@ -44,11 +44,11 @@ e.g.
 ```
 - ackId: -1 indicates Indexer Acknowledgment is disabled on the indexer. Number > 0 is the acknowledgment number of the transfer
 
-To query if the payload of a specific acknowledgment number is indexed
+To query if the payload of specific acknowledgment number is indexed, e.g.
 ```python
-  respRack = myHEC.queryAck(ackEvent)
+  respRack = hec0.queryAck([5581,5582])
 ```
-- ackEvent: a json object containing an array of acknowledgment number
+- ackEvent: an array of acknowledgment number
 - respRack: a json object containing the result of the acknowledgment number status
 
 For details, please refer to [Splunk Documentation](http://dev.splunk.com/view/event-collector/SP-CAAAE8X)
@@ -71,7 +71,7 @@ For details, please refer to [Splunk Documentation](http://dev.splunk.com/view/e
 ```python
   setHost(String: Value of the meta field 'host')
 ```
-* *Note: default is the hostname of the socket*
+* *Note: default is the mac address*
 ```python
   setToken(String: Token of the HEC channel)
 ```
