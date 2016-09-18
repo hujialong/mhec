@@ -6,7 +6,7 @@
 - Disclaimer: This is not an official Splunk solution and with no liability. Use at your own risk.
 - For feedback and bug report, please send to jyung@splunk.com
 - Other supporting files
-  - mhttp.py: Demo HTTP class, SSL is not supported and only POST is implemented.
+  - mhttp.py: Demo class for HTTP POST, SSL is not supported.
   - mMCP9808.py: Demo class for I2C temperature sensor breakout, https://www.adafruit.com/products/1782 
   - hecJsontest.py: Usage example
 
