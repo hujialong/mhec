@@ -61,8 +61,8 @@ class hec(object):
         urlAck = self.http+"://"+self.indexer+":"+self.port+"/services/collector/ack?channel="+self.guid
         try:
             h = mhttp.http()
-            head = hecHeader % (token, guid)
-            status = h.open(urlAck,data=json.dumps(ackId),headers=head)
+            head = hecHeader % (self.token, self.guid)
+            status = h.open(urlAck,data=json.dumps(ackId),header=head)
             if status == "200":
                 resp = h.read()
                 return resp
