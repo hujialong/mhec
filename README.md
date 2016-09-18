@@ -40,13 +40,13 @@ e.g.
 
 **Optional Indexer Acknowledgment**: support both hecRaw and hecJson
 ```python
-  ackId = myHEC.msubmit("10dof","sensorData.py",eventData)
+  ackId = myHEC.submit("10dof","sensorData.py",eventData)
 ```
 - ackId: -1 indicates Indexer Acknowledgment is disabled on the indexer. Number > 0 is the acknowledgment number of the transfer
 
 To query if the payload of a specific acknowledgment number is indexed
 ```python
-  respRack = queryAck(ackEvent)
+  respRack = myHEC.queryAck(ackEvent)
 ```
 - ackEvent: a json object containing an array of acknowledgment number
 - respRack: a json object containing the result of the acknowledgment number status
