@@ -102,7 +102,7 @@ class hecJson(hec):
     def submit(self, sourcetype, source, eventData):
         self.url = self.http+"://"+self.indexer+":"+str(self.port)+"/services/collector"
         event={}
-        event["time"]=int(time.time())
+        event["time"]=int(time.time())+946684800
         event["host"]=self.host
         event["source"]=source
         event["sourcetype"]=sourcetype
@@ -116,4 +116,4 @@ class hecRaw(hec):
 
     def submit(self, eventData):
         self.url = self.http+"://"+self.indexer+":"+str(self.port)+"/services/collector/raw"
-        return super(hecRaw,self).__submit(str(int(time.time()))+" "+eventData)
+        return super(hecRaw,self).__submit(str(int(time.time())+946684800)+" "+eventData)
