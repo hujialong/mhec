@@ -56,13 +56,15 @@ class hec(object):
         except mhttp.InvalidPort:
             raise GeneralFailure
 
-    def __queryAck(self, ackId):
+    def __queryAck(self, ackIds):
         hecHeader = 'User-Agent: MicroPython\r\nAuthorization: Splunk %s\r\nX-Splunk-Request-Channel: %s'
-        urlAck = self.http+"://"+self.indexer+":"+self.port+"/services/collector/ack?channel="+self.guid
+        urlAck = self.http+"://"+self.indexer+":"+str(self.port)+"/services/collector/ack?channel="+self.guid
         try:
             h = mhttp.http()
             head = hecHeader % (self.token, self.guid)
-            status = h.open(urlAck,data=json.dumps(ackId),header=head)
+            ackList={}
+            ackList["acks"] = ackIds
+            status = h.open(urlAck,data=json.dumps(ackList),header=head)
             if status == "200":
                 resp = h.read()
                 return resp
@@ -92,8 +94,8 @@ class hec(object):
     def setGUID(self, guid):
         self.guid = guid
 
-    def queryAck(self, ackId):
-        return self.__queryAck(ackId)
+    def queryAck(self, ackIds):
+        return self.__queryAck(ackIds)
 
 class hecJson(hec):
     def __init__(self, indexer, port, token):
