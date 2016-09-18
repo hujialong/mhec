@@ -12,36 +12,35 @@
 # Usage
 **First step**. Import the Class
 ```python
-  import hec
+  import mhec
 ```
 
 **Option 1**. JSON Data payload
 ```python
-  hec.hecJson(String: indexer ip address,String: port,String: token)
-  hec.submit(String: sourcetype,String: source,Json: event)
+  mhec.hecJson(String: indexer ip address,String: port,String: token)
+  mhec.submit(String: sourcetype,String: source,Json: event)
 ```
 e.g.
 ```python
-  myHEC = hec.hecJson("192.168.10.8","8088","75475867-EE4F-4357-BBA3-03F1D66F3697")
+  myHEC = mhec.hecJson("192.168.10.8","8088","75475867-EE4F-4357-BBA3-03F1D66F3697")
   myHEC.submit("10dof","sensorData.py",eventData)
 ```
 
 **Option 2**. RAW Data payload
 ```python
-  hec.hecRaw(String: index ip address,String: port,String: token)
+  hec.mhecRaw(String: index ip address,String: port,String: token)
   hec.submit(String: raw event)
 ```
 e.g.
 ```python
-  myHEC = hec.hecRaw("192.168.10.8","8088","75475867-EE4F-4357-BBA3-03F1D66F3697")
+  myHEC = mhec.hecRaw("192.168.10.8","8088","75475867-EE4F-4357-BBA3-03F1D66F3697")
   myHec.submit("Raw event data example")
 ````
 
 **Optional Indexer Acknowledgment**: support both hecRaw and hecJson
 ```python
-  resp, ackId = myHEC.submit("10dof","sensorData.py",eventData)
+  ackId = myHEC.msubmit("10dof","sensorData.py",eventData)
 ```
-- resp: True/False of the transfer
 - ackId: -1 indicates Indexer Acknowledgment is disabled on the indexer. Number > 0 is the acknowledgment number of the transfer
 
 To query if the payload of a specific acknowledgment number is indexed
