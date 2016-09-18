@@ -6,9 +6,9 @@
 - Disclaimer: This is not an official Splunk solution and with no liability. Use at your own risk.
 - For feedback and bug report, please send to jyung@splunk.com
 - Other supporting files
--- mhttp.py: Demo HTTP class, SSL is not supported, and only POST is implemented.
--- mMCP9808.py: Demo class for I2C temperature sensor from AdaFruit, http://www.adafruit.com 
--- hecJsontest.py: Example to send the temperature to Splunk
+- mhttp.py: Demo HTTP class, SSL is not supported, and only POST is implemented.
+- mMCP9808.py: Demo class for I2C temperature sensor from AdaFruit, http://www.adafruit.com 
+- hecJsontest.py: Example to send the temperature to Splunk
 -
 # Usage
 **First step**. Import the Class
