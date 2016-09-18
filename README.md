@@ -1,6 +1,6 @@
 # Demo MicroPython Class for HTTP Event Collector of Splunk Enterprise 6.4.x
 - mhec.py
-- Tested on AdaFruit Feather HUZZAH with 8266 (https://www.adafruit.com/products/2821) running MicrooPython esp8266-20160909-v1.8.4.bin (http://micropython.org/download/#esp8266)
+- Tested on AdaFruit Feather HUZZAH with 8266 (https://www.adafruit.com/products/2821) running MicroPython esp8266-20160909-v1.8.4.bin (http://micropython.org/download/#esp8266)
 - Support JSON, RAW data inputs and Indexer acknowledgment
 - Reference: http://docs.splunk.com/Documentation/Splunk/6.4.2/Data/UsetheHTTPEventCollector
 - Disclaimer: This is not an official Splunk solution and with no liability. Use at your own risk.
